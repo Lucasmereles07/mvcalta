@@ -11,7 +11,7 @@
 <body>
 
 </body>
-<form action="<?= URL_BASE; ?>personas/crear" method=" post">
+<form action="<?= URL_BASE; ?>personas/crear" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" autocomplete="on" required>
 

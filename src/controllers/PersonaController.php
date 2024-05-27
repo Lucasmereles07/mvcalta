@@ -6,6 +6,7 @@ namespace Empresa\App\Controllers;
 
 use Empresa\App\Core\Controller;
 use Empresa\App\Models\Auto;
+use Empresa\App\Models\Persona;
 
 class PersonaController extends Controller
 {
@@ -25,9 +26,17 @@ class PersonaController extends Controller
         try {
             //code...
 
-            $marca = $_POST['marca'] ?? '';
-            $modelo = $_POST['modelo'] ?? '';
-            $fechaCompra = $_POST['fechaCompra'] ?? '';
+            $nombre = $_POST['nombre'] ?? "defecto";
+            $apellido = $_POST['apellido'] ?? "defecto";
+            $email = $_POST['email'] ?? "defecto";
+            $fechaNac = $_POST['fechaNac'] ?? "defecto";
+            $numero = $_POST['numero'] ?? "defecto";
+            $genero = $_POST['genero'] ?? "defecto";
+            $pais = $_POST['pais'] ?? "defecto";
+            $persona = new Persona($nombre, $apellido, $email, $fechaNac, $numero, $genero, $pais);
+            $mensaje = $persona->crear();
+
+
             // Crear instancia de Auto
             // $auto = new Auto($marca, $modelo, $fechaCompra);
 
@@ -37,7 +46,7 @@ class PersonaController extends Controller
             // } else {
             //     $mensaje = "Error al registrar el auto.";
             // }
-            $this->render('autos/mensaje', ["mensaje" => $mensaje]);
+            $this->render('persona/mensaje', ["mensaje" => $mensaje]);
         } catch (\Throwable $th) {
             //throw $th;
         }
