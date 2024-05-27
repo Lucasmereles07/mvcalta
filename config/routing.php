@@ -15,3 +15,6 @@ $router->add('autos/listar', ['controller' => 'Auto', 'action' => 'listar']);
 $router->add('autos/editar', ['controller' => 'Auto', 'action' => 'editar']);
 $router->add('autos/modificar', ['controller' => 'Auto', 'action' => 'modificar']);
 $router->add('autos/borrar', ['controller' => 'Auto', 'action' => 'borrar']);
+//persona
+$router->add('personas/nuevo', ['controller' => 'Persona', 'action' => 'nuevo']);
+$router->add('personas/crear', ['controller' => 'Persona', 'action' => 'crear']);
