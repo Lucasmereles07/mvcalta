@@ -34,8 +34,11 @@ class PersonaController extends Controller
             $genero = $_POST['genero'] ?? "defecto";
             $pais = $_POST['pais'] ?? "defecto";
             $persona = new Persona($nombre, $apellido, $email, $fechaNac, $numero, $genero, $pais);
-            $mensaje = $persona->crear();
-
+            $resultado = $persona->crear();
+            $mensaje = "error al crear persona";
+            if ($resultado) {
+                $mensaje = "persona creada con exito";
+            }
 
             // Crear instancia de Auto
             // $auto = new Auto($marca, $modelo, $fechaCompra);
